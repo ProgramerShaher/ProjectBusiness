@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abomesharynews.pages.dev/sitemap.xml
+Sitemap: https://abomesharybusiness.pages.dev/sitemap.xml
