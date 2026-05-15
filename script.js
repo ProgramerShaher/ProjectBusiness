@@ -174,3 +174,42 @@ desktopNavLinks.forEach(link => {
     }
   });
 });
+// --- Video Modal (Lightbox) Logic ---
+const videoModal = document.getElementById('video-modal');
+const videoContainer = document.getElementById('video-container');
+const closeVideoModal = document.getElementById('close-video-modal');
+
+document.querySelectorAll('.video-placeholder').forEach(placeholder => {
+  placeholder.addEventListener('click', function () {
+    const videoId = this.getAttribute('data-video-id');
+
+    // Set iframe with absolute basic settings for maximum compatibility
+    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&enablejsapi=1`;
+
+    videoContainer.innerHTML = `
+      <iframe class="w-full h-full" 
+        src="${embedUrl}" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    `;
+
+    // Show Modal
+    videoModal.classList.remove('opacity-0', 'pointer-events-none');
+    videoModal.classList.add('opacity-100', 'pointer-events-auto');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  });
+});
+
+const hideModal = () => {
+  videoModal.classList.remove('opacity-100', 'pointer-events-auto');
+  videoModal.classList.add('opacity-0', 'pointer-events-none');
+  videoContainer.innerHTML = ''; // Stop video playback
+  document.body.style.overflow = ''; // Restore scrolling
+};
+
+closeVideoModal.addEventListener('click', hideModal);
+videoModal.addEventListener('click', (e) => {
+  if (e.target === videoModal) hideModal();
+});

@@ -196,3 +196,67 @@ html {
 .translate-x-0 {
   transform: translateX(0);
 }
+
+/* Premium Social Icons */
+.social-icon-box {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-center;
+  overflow: hidden;
+  position: relative;
+}
+
+.social-icon-box:hover {
+  transform: translateY(-8px) scale(1.1);
+}
+
+.social-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  box-shadow: 0 10px 20px -5px rgba(220, 39, 67, 0.4);
+}
+
+.social-snapchat {
+  background: #FFFC00;
+  box-shadow: 0 10px 20px -5px rgba(255, 252, 0, 0.4);
+}
+
+.social-tiktok {
+  background: #000000;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-tiktok::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 0, 80, 0.2) 0%, rgba(0, 242, 234, 0.2) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon-box:hover.social-tiktok::before {
+  opacity: 1;
+}
+
+.social-email {
+  background: #D4AF37;
+  box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4);
+}
+
+.social-phone {
+  background: #0B132B;
+  box-shadow: 0 10px 20px -5px rgba(11, 19, 43, 0.4);
+}
+
+.social-icon-box i, .social-icon-box svg {
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.social-icon-box:hover.social-instagram { box-shadow: 0 15px 30px -5px rgba(220, 39, 67, 0.6); }
+.social-icon-box:hover.social-snapchat { box-shadow: 0 15px 30px -5px rgba(255, 252, 0, 0.6); }
+.social-icon-box:hover.social-tiktok { box-shadow: 0 15px 30px -5px rgba(0, 242, 234, 0.5), 0 15px 30px -5px rgba(255, 0, 80, 0.5); }
+.social-icon-box:hover.social-email { box-shadow: 0 15px 30px -5px rgba(212, 175, 55, 0.6); }
+.social-icon-box:hover.social-phone { box-shadow: 0 15px 30px -5px rgba(11, 19, 43, 0.6); }
