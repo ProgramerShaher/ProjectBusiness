@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abomesharybusiness.shaheralyaari.workers.dev/sitemap.xml
+# توجيه جوجل للرابط الجديد والاحترافي
+Sitemap: https://business.abomeshary.workers.dev/sitemap.xml
