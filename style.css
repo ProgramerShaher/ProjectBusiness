@@ -305,3 +305,178 @@ html {
 .social-icon-box:hover.social-phone {
   box-shadow: 0 15px 30px -5px rgba(11, 19, 43, 0.6);
 }
+
+/* ═══════════ WOW FACTOR CSS ═══════════ */
+
+/* Glowing Orbs */
+.glowing-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 15;
+  pointer-events: none;
+  animation: floatOrb 10s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 117, 140, 0.4);
+  /* Pink */
+  top: 20%;
+  left: 10%;
+}
+
+.orb-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(37, 117, 252, 0.3);
+  /* Blue */
+  bottom: 10%;
+  right: 15%;
+  animation-delay: -5s;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(50px, -50px) scale(1.2);
+  }
+}
+
+/* Button Shine Effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-20deg);
+  animation: shine 4s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+
+  20% {
+    left: 200%;
+  }
+
+  100% {
+    left: 200%;
+  }
+}
+
+/* Floating Micro-animation */
+.float-animation {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 3D Glassmorphism Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+/* 3D Hover on Gallery */
+.gallery-item {
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.5s ease;
+}
+
+.gallery-item:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(2deg) translateY(-10px);
+  box-shadow: -10px 15px 30px rgba(212, 175, 55, 0.15), 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Animated Mouse Scroll Indicator */
+.mouse-indicator {
+  width: 26px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.mouse-indicator:hover {
+  border-color: #D4AF37;
+}
+
+.mouse-wheel {
+  width: 4px;
+  height: 8px;
+  background: #D4AF37;
+  border-radius: 2px;
+  margin-top: 6px;
+  animation: scrollWheel 2s ease infinite;
+}
+
+@keyframes scrollWheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+}
+
+/* Dynamic Color Shift */
+.dynamic-color {
+  animation: hueShift 20s infinite alternate ease-in-out;
+}
+
+@keyframes hueShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(45deg) brightness(1.2);
+  }
+
+  100% {
+    filter: hue-rotate(-20deg) brightness(1.1);
+  }
+}

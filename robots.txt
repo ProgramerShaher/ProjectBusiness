@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # توجيه جوجل للرابط الجديد والاحترافي
-Sitemap: https://business.abomeshary.workers.dev/sitemap.xml
+Sitemap: https://muzallatdammam.com/sitemap.xml
